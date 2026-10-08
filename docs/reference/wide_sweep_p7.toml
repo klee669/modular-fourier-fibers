@@ -1,0 +1,187 @@
+K = 25
+direct_sum_verified = true
+full_rank = 271
+kind = "wide"
+p = 7
+projected_block_dimensions = [25, 41, 41, 41, 41, 41, 41]
+
+[[samples]]
+block_ranks = [5, 5, 5, 5, 5, 5, 5]
+n = 5
+naive_rank = 35
+rank = 35
+seed = 1
+[[samples]]
+block_ranks = [10, 10, 10, 10, 10, 10, 10]
+n = 10
+naive_rank = 70
+rank = 70
+seed = 1
+[[samples]]
+block_ranks = [15, 15, 15, 15, 15, 15, 15]
+n = 15
+naive_rank = 105
+rank = 105
+seed = 1
+[[samples]]
+block_ranks = [20, 20, 20, 20, 20, 20, 20]
+n = 20
+naive_rank = 140
+rank = 140
+seed = 1
+[[samples]]
+block_ranks = [23, 25, 25, 25, 25, 25, 25]
+n = 25
+naive_rank = 175
+rank = 173
+seed = 1
+[[samples]]
+block_ranks = [25, 30, 30, 30, 30, 30, 30]
+n = 30
+naive_rank = 210
+rank = 205
+seed = 1
+[[samples]]
+block_ranks = [25, 35, 35, 35, 35, 35, 35]
+n = 35
+naive_rank = 245
+rank = 235
+seed = 1
+[[samples]]
+block_ranks = [25, 40, 40, 40, 40, 40, 40]
+n = 40
+naive_rank = 271
+rank = 265
+seed = 1
+[[samples]]
+block_ranks = [25, 41, 41, 41, 41, 41, 41]
+n = 45
+naive_rank = 271
+rank = 271
+seed = 1
+[[samples]]
+block_ranks = [25, 41, 41, 41, 41, 41, 41]
+n = 49
+naive_rank = 271
+rank = 271
+seed = 1
+[[samples]]
+block_ranks = [5, 5, 5, 5, 5, 5, 5]
+n = 5
+naive_rank = 35
+rank = 35
+seed = 2
+[[samples]]
+block_ranks = [10, 10, 10, 10, 10, 10, 10]
+n = 10
+naive_rank = 70
+rank = 70
+seed = 2
+[[samples]]
+block_ranks = [15, 15, 15, 15, 15, 15, 15]
+n = 15
+naive_rank = 105
+rank = 105
+seed = 2
+[[samples]]
+block_ranks = [19, 20, 20, 20, 20, 20, 20]
+n = 20
+naive_rank = 140
+rank = 139
+seed = 2
+[[samples]]
+block_ranks = [23, 25, 25, 25, 25, 25, 25]
+n = 25
+naive_rank = 175
+rank = 173
+seed = 2
+[[samples]]
+block_ranks = [25, 30, 30, 30, 30, 30, 30]
+n = 30
+naive_rank = 210
+rank = 205
+seed = 2
+[[samples]]
+block_ranks = [25, 35, 35, 35, 35, 35, 35]
+n = 35
+naive_rank = 245
+rank = 235
+seed = 2
+[[samples]]
+block_ranks = [25, 40, 40, 40, 40, 40, 40]
+n = 40
+naive_rank = 271
+rank = 265
+seed = 2
+[[samples]]
+block_ranks = [25, 41, 41, 41, 41, 41, 41]
+n = 45
+naive_rank = 271
+rank = 271
+seed = 2
+[[samples]]
+block_ranks = [25, 41, 41, 41, 41, 41, 41]
+n = 49
+naive_rank = 271
+rank = 271
+seed = 2
+[[samples]]
+block_ranks = [5, 5, 5, 5, 5, 5, 5]
+n = 5
+naive_rank = 35
+rank = 35
+seed = 3
+[[samples]]
+block_ranks = [10, 10, 10, 10, 10, 10, 10]
+n = 10
+naive_rank = 70
+rank = 70
+seed = 3
+[[samples]]
+block_ranks = [15, 15, 15, 15, 15, 15, 15]
+n = 15
+naive_rank = 105
+rank = 105
+seed = 3
+[[samples]]
+block_ranks = [19, 20, 20, 20, 20, 20, 20]
+n = 20
+naive_rank = 140
+rank = 139
+seed = 3
+[[samples]]
+block_ranks = [24, 25, 25, 25, 25, 25, 25]
+n = 25
+naive_rank = 175
+rank = 174
+seed = 3
+[[samples]]
+block_ranks = [25, 30, 30, 30, 30, 30, 30]
+n = 30
+naive_rank = 210
+rank = 205
+seed = 3
+[[samples]]
+block_ranks = [25, 35, 35, 35, 35, 35, 35]
+n = 35
+naive_rank = 245
+rank = 235
+seed = 3
+[[samples]]
+block_ranks = [25, 40, 40, 40, 40, 40, 40]
+n = 40
+naive_rank = 271
+rank = 265
+seed = 3
+[[samples]]
+block_ranks = [25, 41, 41, 41, 41, 41, 41]
+n = 45
+naive_rank = 271
+rank = 271
+seed = 3
+[[samples]]
+block_ranks = [25, 41, 41, 41, 41, 41, 41]
+n = 49
+naive_rank = 271
+rank = 271
+seed = 3

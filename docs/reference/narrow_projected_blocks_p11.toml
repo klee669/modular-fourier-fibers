@@ -1,0 +1,6 @@
+K = 21
+direct_sum_verified = false
+full_rank = 621
+kind = "narrow"
+p = 11
+projected_block_dimensions = [41, 73, 73, 73, 73, 73, 73, 73, 73, 73, 73]

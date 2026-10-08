@@ -1,0 +1,386 @@
+status = "numerical evidence only; not a germ-equality certificate"
+
+[[samples]]
+distance = 0.009999998820811448
+full_residual = 2.7422508708241367e-14
+iterations = 3
+n = 22
+rep = 1
+scale = 0.01
+training_residual = 6.661338147750939e-16
+[[samples]]
+distance = 0.009999998240741211
+full_residual = 5.662137425588298e-15
+iterations = 3
+n = 22
+rep = 2
+scale = 0.01
+training_residual = 5.273559366969494e-16
+[[samples]]
+distance = 0.009999996151415993
+full_residual = 2.6756374893466273e-14
+iterations = 3
+n = 22
+rep = 3
+scale = 0.01
+training_residual = 5.551115123125783e-16
+[[samples]]
+distance = 0.009999997450354863
+full_residual = 5.262457136723242e-14
+iterations = 3
+n = 22
+rep = 4
+scale = 0.01
+training_residual = 4.440892098500626e-16
+[[samples]]
+distance = 0.009999991888512966
+full_residual = 5.112577028398846e-14
+iterations = 3
+n = 22
+rep = 5
+scale = 0.01
+training_residual = 8.881784197001252e-16
+[[samples]]
+distance = 0.009999998560608623
+full_residual = 6.311617894994015e-14
+iterations = 3
+n = 22
+rep = 6
+scale = 0.01
+training_residual = 5.551115123125783e-16
+[[samples]]
+distance = 0.009999997801050563
+full_residual = 2.1871393585115584e-14
+iterations = 3
+n = 22
+rep = 7
+scale = 0.01
+training_residual = 6.661338147750939e-16
+[[samples]]
+distance = 0.00999999848920733
+full_residual = 1.1601830607332886e-14
+iterations = 3
+n = 22
+rep = 8
+scale = 0.01
+training_residual = 4.440892098500626e-16
+[[samples]]
+distance = 0.0009999999922129619
+full_residual = 9.103828801926284e-15
+iterations = 2
+n = 22
+rep = 1
+scale = 0.001
+training_residual = 1.7763568394002505e-15
+[[samples]]
+distance = 0.0009999999944989434
+full_residual = 3.164135620181696e-14
+iterations = 2
+n = 22
+rep = 2
+scale = 0.001
+training_residual = 9.992007221626409e-16
+[[samples]]
+distance = 0.0009999999933536232
+full_residual = 3.9968028886505635e-14
+iterations = 2
+n = 22
+rep = 3
+scale = 0.001
+training_residual = 1.1657341758564144e-15
+[[samples]]
+distance = 0.000999999993925745
+full_residual = 2.8754776337791554e-14
+iterations = 2
+n = 22
+rep = 4
+scale = 0.001
+training_residual = 1.3322676295501878e-15
+[[samples]]
+distance = 0.0009999999948936994
+full_residual = 2.1649348980190553e-14
+iterations = 2
+n = 22
+rep = 5
+scale = 0.001
+training_residual = 8.881784197001252e-16
+[[samples]]
+distance = 0.0009999999970399468
+full_residual = 1.1546319456101628e-14
+iterations = 2
+n = 22
+rep = 6
+scale = 0.001
+training_residual = 1.1102230246251565e-15
+[[samples]]
+distance = 0.0009999999961774985
+full_residual = 3.269606807521086e-14
+iterations = 2
+n = 22
+rep = 7
+scale = 0.001
+training_residual = 1.7763568394002505e-15
+[[samples]]
+distance = 0.0009999999951148372
+full_residual = 2.020605904817785e-14
+iterations = 2
+n = 22
+rep = 8
+scale = 0.001
+training_residual = 1.3322676295501878e-15
+[[samples]]
+distance = 9.999999999469201e-5
+full_residual = 8.104628079763643e-15
+iterations = 2
+n = 22
+rep = 1
+scale = 0.0001
+training_residual = 6.661338147750939e-16
+[[samples]]
+distance = 9.999999998970571e-5
+full_residual = 2.2926105458509483e-14
+iterations = 2
+n = 22
+rep = 2
+scale = 0.0001
+training_residual = 4.440892098500626e-16
+[[samples]]
+distance = 9.999999999410658e-5
+full_residual = 3.2529534621517087e-14
+iterations = 2
+n = 22
+rep = 3
+scale = 0.0001
+training_residual = 4.440892098500626e-16
+[[samples]]
+distance = 9.999999999646864e-5
+full_residual = 1.6542323066914832e-14
+iterations = 2
+n = 22
+rep = 4
+scale = 0.0001
+training_residual = 9.992007221626409e-16
+[[samples]]
+distance = 9.99999999981406e-5
+full_residual = 2.2537527399890678e-14
+iterations = 2
+n = 22
+rep = 5
+scale = 0.0001
+training_residual = 4.440892098500626e-16
+[[samples]]
+distance = 9.999999999677294e-5
+full_residual = 3.647082635893639e-14
+iterations = 2
+n = 22
+rep = 6
+scale = 0.0001
+training_residual = 6.661338147750939e-16
+[[samples]]
+distance = 9.999999999639057e-5
+full_residual = 2.8144153674247718e-14
+iterations = 2
+n = 22
+rep = 7
+scale = 0.0001
+training_residual = 5.551115123125783e-16
+[[samples]]
+distance = 9.999999999468473e-5
+full_residual = 4.0967229608668276e-14
+iterations = 2
+n = 22
+rep = 8
+scale = 0.0001
+training_residual = 6.661338147750939e-16
+[[samples]]
+distance = 0.009999969844617693
+full_residual = 3.3306690738754696e-15
+iterations = 3
+n = 23
+rep = 1
+scale = 0.01
+training_residual = 7.771561172376096e-16
+[[samples]]
+distance = 0.010000066990058702
+full_residual = 9.992007221626409e-16
+iterations = 3
+n = 23
+rep = 2
+scale = 0.01
+training_residual = 4.440892098500626e-16
+[[samples]]
+distance = 0.009999940248959406
+full_residual = 2.4980018054066022e-15
+iterations = 3
+n = 23
+rep = 3
+scale = 0.01
+training_residual = 8.881784197001252e-16
+[[samples]]
+distance = 0.009999934426255276
+full_residual = 6.661338147750939e-16
+iterations = 3
+n = 23
+rep = 4
+scale = 0.01
+training_residual = 4.440892098500626e-16
+[[samples]]
+distance = 0.009999953548137538
+full_residual = 2.7755575615628914e-15
+iterations = 3
+n = 23
+rep = 5
+scale = 0.01
+training_residual = 6.661338147750939e-16
+[[samples]]
+distance = 0.009999982333589475
+full_residual = 1.1102230246251565e-15
+iterations = 3
+n = 23
+rep = 6
+scale = 0.01
+training_residual = 8.881784197001252e-16
+[[samples]]
+distance = 0.010000080794409779
+full_residual = 1.3877787807814457e-15
+iterations = 3
+n = 23
+rep = 7
+scale = 0.01
+training_residual = 4.440892098500626e-16
+[[samples]]
+distance = 0.009999989094645154
+full_residual = 3.1086244689504383e-15
+iterations = 3
+n = 23
+rep = 8
+scale = 0.01
+training_residual = 1.1102230246251565e-15
+[[samples]]
+distance = 0.0009999799983863038
+full_residual = 1.6209256159527285e-14
+iterations = 2
+n = 23
+rep = 1
+scale = 0.001
+training_residual = 3.497202527569243e-15
+[[samples]]
+distance = 0.0010000383992485131
+full_residual = 3.83026943495679e-15
+iterations = 2
+n = 23
+rep = 2
+scale = 0.001
+training_residual = 1.3322676295501878e-15
+[[samples]]
+distance = 0.0010000145279829397
+full_residual = 3.885780586188048e-15
+iterations = 2
+n = 23
+rep = 3
+scale = 0.001
+training_residual = 7.771561172376096e-16
+[[samples]]
+distance = 0.0010000115228832249
+full_residual = 1.0547118733938987e-14
+iterations = 2
+n = 23
+rep = 4
+scale = 0.001
+training_residual = 2.4424906541753444e-15
+[[samples]]
+distance = 0.0009999971775977263
+full_residual = 2.6645352591003757e-15
+iterations = 2
+n = 23
+rep = 5
+scale = 0.001
+training_residual = 9.992007221626409e-16
+[[samples]]
+distance = 0.0009999912593577074
+full_residual = 3.885780586188048e-15
+iterations = 2
+n = 23
+rep = 6
+scale = 0.001
+training_residual = 1.3322676295501878e-15
+[[samples]]
+distance = 0.0010001447194476632
+full_residual = 6.994405055138486e-15
+iterations = 2
+n = 23
+rep = 7
+scale = 0.001
+training_residual = 6.328271240363392e-15
+[[samples]]
+distance = 0.0010000422957341512
+full_residual = 1.8318679906315083e-14
+iterations = 2
+n = 23
+rep = 8
+scale = 0.001
+training_residual = 1.3988810110276972e-14
+[[samples]]
+distance = 9.995412855227184e-5
+full_residual = 1.3322676295501878e-15
+iterations = 3
+n = 23
+rep = 1
+scale = 0.0001
+training_residual = 4.440892098500626e-16
+[[samples]]
+distance = 0.00010019807138541755
+full_residual = 6.661338147750939e-16
+iterations = 3
+n = 23
+rep = 2
+scale = 0.0001
+training_residual = 4.440892098500626e-16
+[[samples]]
+distance = 0.0001000542382055268
+full_residual = 3.9968028886505635e-14
+iterations = 2
+n = 23
+rep = 3
+scale = 0.0001
+training_residual = 3.9968028886505635e-14
+[[samples]]
+distance = 9.98649653614036e-5
+full_residual = 2.653433028854124e-14
+iterations = 2
+n = 23
+rep = 4
+scale = 0.0001
+training_residual = 2.653433028854124e-14
+[[samples]]
+distance = 0.00010030237612790315
+full_residual = 1.1102230246251565e-15
+iterations = 3
+n = 23
+rep = 5
+scale = 0.0001
+training_residual = 6.661338147750939e-16
+[[samples]]
+distance = 9.982354654185672e-5
+full_residual = 9.214851104388799e-14
+iterations = 2
+n = 23
+rep = 6
+scale = 0.0001
+training_residual = 9.159339953157541e-14
+[[samples]]
+distance = 9.980239003777223e-5
+full_residual = 1.9539925233402755e-13
+iterations = 2
+n = 23
+rep = 7
+scale = 0.0001
+training_residual = 1.9539925233402755e-13
+[[samples]]
+distance = 0.00010011350332639508
+full_residual = 1.3489209749195652e-13
+iterations = 2
+n = 23
+rep = 8
+scale = 0.0001
+training_residual = 1.3489209749195652e-13

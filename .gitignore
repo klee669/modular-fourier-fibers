@@ -1,0 +1,3 @@
+results/
+*.jl.cov
+.DS_Store

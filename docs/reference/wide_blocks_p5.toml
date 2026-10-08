@@ -1,0 +1,6 @@
+K = 17
+direct_sum_verified = true
+full_rank = 117
+kind = "wide"
+p = 5
+projected_block_dimensions = [17, 25, 25, 25, 25]

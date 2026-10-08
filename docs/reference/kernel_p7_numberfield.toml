@@ -1,0 +1,11 @@
+K = 13
+arithmetic = "numberfield"
+coupled_kernel = 6
+extra = 18
+field = "Number field of degree 6 over QQ"
+gauge = 26
+kernel = 44
+localized_kernels = [12, 12, 12, 2]
+p = 7
+parameters = 273
+rank = 229

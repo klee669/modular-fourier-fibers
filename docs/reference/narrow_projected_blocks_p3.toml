@@ -1,0 +1,6 @@
+K = 5
+direct_sum_verified = true
+full_rank = 27
+kind = "narrow"
+p = 3
+projected_block_dimensions = [9, 9, 9]

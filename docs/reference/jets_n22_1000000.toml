@@ -1,0 +1,16 @@
+K = 9
+arithmetic = "finite"
+cubic_monomials = 364
+cubic_obstruction_rank_D = 0
+cubic_obstruction_rank_all = 0
+field = "Prime field of characteristic 1000081"
+full_rank = 105
+gauge = 18
+kernel = 30
+n = 22
+p = 5
+quadratic_monomials = 78
+quadratic_obstruction_rank_D = 0
+quadratic_obstruction_rank_all = 0
+slice_dimension = 12
+training_rank = 105

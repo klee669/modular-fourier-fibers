@@ -1,0 +1,6 @@
+K = 41
+direct_sum_verified = true
+full_rank = 771
+kind = "wide"
+p = 11
+projected_block_dimensions = [41, 73, 73, 73, 73, 73, 73, 73, 73, 73, 73]

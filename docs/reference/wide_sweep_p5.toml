@@ -1,0 +1,97 @@
+K = 17
+direct_sum_verified = true
+full_rank = 117
+kind = "wide"
+p = 5
+projected_block_dimensions = [17, 25, 25, 25, 25]
+
+[[samples]]
+block_ranks = [5, 5, 5, 5, 5]
+n = 5
+naive_rank = 25
+rank = 25
+seed = 1
+[[samples]]
+block_ranks = [10, 10, 10, 10, 10]
+n = 10
+naive_rank = 50
+rank = 50
+seed = 1
+[[samples]]
+block_ranks = [15, 15, 15, 15, 15]
+n = 15
+naive_rank = 75
+rank = 75
+seed = 1
+[[samples]]
+block_ranks = [17, 20, 20, 20, 20]
+n = 20
+naive_rank = 100
+rank = 97
+seed = 1
+[[samples]]
+block_ranks = [17, 25, 25, 25, 25]
+n = 25
+naive_rank = 117
+rank = 117
+seed = 1
+[[samples]]
+block_ranks = [5, 5, 5, 5, 5]
+n = 5
+naive_rank = 25
+rank = 25
+seed = 2
+[[samples]]
+block_ranks = [10, 10, 10, 10, 10]
+n = 10
+naive_rank = 50
+rank = 50
+seed = 2
+[[samples]]
+block_ranks = [15, 15, 15, 15, 15]
+n = 15
+naive_rank = 75
+rank = 75
+seed = 2
+[[samples]]
+block_ranks = [17, 20, 20, 20, 20]
+n = 20
+naive_rank = 100
+rank = 97
+seed = 2
+[[samples]]
+block_ranks = [17, 25, 25, 25, 25]
+n = 25
+naive_rank = 117
+rank = 117
+seed = 2
+[[samples]]
+block_ranks = [5, 5, 5, 5, 5]
+n = 5
+naive_rank = 25
+rank = 25
+seed = 3
+[[samples]]
+block_ranks = [10, 10, 10, 10, 10]
+n = 10
+naive_rank = 50
+rank = 50
+seed = 3
+[[samples]]
+block_ranks = [14, 15, 15, 15, 15]
+n = 15
+naive_rank = 75
+rank = 74
+seed = 3
+[[samples]]
+block_ranks = [17, 20, 20, 20, 20]
+n = 20
+naive_rank = 100
+rank = 97
+seed = 3
+[[samples]]
+block_ranks = [17, 25, 25, 25, 25]
+n = 25
+naive_rank = 117
+rank = 117
+seed = 3

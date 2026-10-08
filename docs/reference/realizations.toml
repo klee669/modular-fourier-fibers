@@ -1,0 +1,19 @@
+split_K = 10
+split_kernel = 45
+split_rank = 105
+
+[[phase_variants]]
+full_rank = 105
+full_residual = 8.881784197001252e-16
+phases = [[0.13, 0.27], [-0.41, 0.19]]
+training_rank = 105
+[[phase_variants]]
+full_rank = 105
+full_residual = 6.661338147750939e-16
+phases = [[0.7, -0.2], [1.1, 0.6]]
+training_rank = 105
+[[phase_variants]]
+full_rank = 105
+full_residual = 6.661338147750939e-16
+phases = [[1.4, 0.9], [-0.8, -1.2]]
+training_rank = 105

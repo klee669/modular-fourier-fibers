@@ -1,0 +1,133 @@
+K = 13
+direct_sum_verified = false
+full_rank = 229
+kind = "narrow"
+p = 7
+projected_block_dimensions = [25, 41, 41, 41, 41, 41, 41]
+
+[[samples]]
+block_ranks = [25, 30, 30, 30, 30, 30, 30]
+n = 30
+naive_rank = 210
+rank = 205
+seed = 1
+[[samples]]
+block_ranks = [25, 33, 33, 33, 33, 33, 33]
+n = 33
+naive_rank = 229
+rank = 223
+seed = 1
+[[samples]]
+block_ranks = [25, 34, 34, 34, 34, 34, 34]
+n = 34
+naive_rank = 229
+rank = 229
+seed = 1
+[[samples]]
+block_ranks = [25, 35, 35, 35, 35, 35, 35]
+n = 35
+naive_rank = 229
+rank = 229
+seed = 1
+[[samples]]
+block_ranks = [25, 36, 36, 36, 36, 36, 36]
+n = 36
+naive_rank = 229
+rank = 229
+seed = 1
+[[samples]]
+block_ranks = [25, 40, 40, 40, 40, 40, 40]
+n = 40
+naive_rank = 229
+rank = 229
+seed = 1
+[[samples]]
+block_ranks = [25, 41, 41, 41, 41, 41, 41]
+n = 49
+naive_rank = 229
+rank = 229
+seed = 1
+[[samples]]
+block_ranks = [25, 30, 30, 30, 30, 30, 30]
+n = 30
+naive_rank = 210
+rank = 205
+seed = 2
+[[samples]]
+block_ranks = [25, 33, 33, 33, 33, 33, 33]
+n = 33
+naive_rank = 229
+rank = 223
+seed = 2
+[[samples]]
+block_ranks = [25, 34, 34, 34, 34, 34, 34]
+n = 34
+naive_rank = 229
+rank = 229
+seed = 2
+[[samples]]
+block_ranks = [25, 35, 35, 35, 35, 35, 35]
+n = 35
+naive_rank = 229
+rank = 229
+seed = 2
+[[samples]]
+block_ranks = [25, 36, 36, 36, 36, 36, 36]
+n = 36
+naive_rank = 229
+rank = 229
+seed = 2
+[[samples]]
+block_ranks = [25, 40, 40, 40, 40, 40, 40]
+n = 40
+naive_rank = 229
+rank = 229
+seed = 2
+[[samples]]
+block_ranks = [25, 41, 41, 41, 41, 41, 41]
+n = 49
+naive_rank = 229
+rank = 229
+seed = 2
+[[samples]]
+block_ranks = [25, 30, 30, 30, 30, 30, 30]
+n = 30
+naive_rank = 210
+rank = 205
+seed = 3
+[[samples]]
+block_ranks = [25, 33, 33, 33, 33, 33, 33]
+n = 33
+naive_rank = 229
+rank = 223
+seed = 3
+[[samples]]
+block_ranks = [25, 34, 34, 34, 34, 34, 34]
+n = 34
+naive_rank = 229
+rank = 229
+seed = 3
+[[samples]]
+block_ranks = [25, 35, 35, 35, 35, 35, 35]
+n = 35
+naive_rank = 229
+rank = 229
+seed = 3
+[[samples]]
+block_ranks = [25, 36, 36, 36, 36, 36, 36]
+n = 36
+naive_rank = 229
+rank = 229
+seed = 3
+[[samples]]
+block_ranks = [25, 40, 40, 40, 40, 40, 40]
+n = 40
+naive_rank = 229
+rank = 229
+seed = 3
+[[samples]]
+block_ranks = [25, 41, 41, 41, 41, 41, 41]
+n = 49
+naive_rank = 229
+rank = 229
+seed = 3

@@ -1,0 +1,11 @@
+K = 9
+arithmetic = "finite"
+coupled_kernel = 4
+extra = 12
+field = "Prime field of characteristic 1000081"
+gauge = 18
+kernel = 30
+localized_kernels = [12, 12, 2]
+p = 5
+parameters = 135
+rank = 105

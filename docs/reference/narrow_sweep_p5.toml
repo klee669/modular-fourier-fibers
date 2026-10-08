@@ -1,0 +1,133 @@
+K = 9
+direct_sum_verified = false
+full_rank = 105
+kind = "narrow"
+p = 5
+projected_block_dimensions = [17, 25, 25, 25, 25]
+
+[[samples]]
+block_ranks = [16, 19, 19, 19, 19]
+n = 19
+naive_rank = 95
+rank = 92
+seed = 1
+[[samples]]
+block_ranks = [17, 20, 20, 20, 20]
+n = 20
+naive_rank = 100
+rank = 97
+seed = 1
+[[samples]]
+block_ranks = [17, 21, 21, 21, 21]
+n = 21
+naive_rank = 105
+rank = 101
+seed = 1
+[[samples]]
+block_ranks = [17, 22, 22, 22, 22]
+n = 22
+naive_rank = 105
+rank = 105
+seed = 1
+[[samples]]
+block_ranks = [17, 23, 23, 23, 23]
+n = 23
+naive_rank = 105
+rank = 105
+seed = 1
+[[samples]]
+block_ranks = [17, 24, 24, 24, 24]
+n = 24
+naive_rank = 105
+rank = 105
+seed = 1
+[[samples]]
+block_ranks = [17, 25, 25, 25, 25]
+n = 25
+naive_rank = 105
+rank = 105
+seed = 1
+[[samples]]
+block_ranks = [16, 19, 19, 19, 19]
+n = 19
+naive_rank = 95
+rank = 92
+seed = 2
+[[samples]]
+block_ranks = [17, 20, 20, 20, 20]
+n = 20
+naive_rank = 100
+rank = 97
+seed = 2
+[[samples]]
+block_ranks = [17, 21, 21, 21, 21]
+n = 21
+naive_rank = 105
+rank = 101
+seed = 2
+[[samples]]
+block_ranks = [17, 22, 22, 22, 22]
+n = 22
+naive_rank = 105
+rank = 105
+seed = 2
+[[samples]]
+block_ranks = [17, 23, 23, 23, 23]
+n = 23
+naive_rank = 105
+rank = 105
+seed = 2
+[[samples]]
+block_ranks = [17, 24, 24, 24, 24]
+n = 24
+naive_rank = 105
+rank = 105
+seed = 2
+[[samples]]
+block_ranks = [17, 25, 25, 25, 25]
+n = 25
+naive_rank = 105
+rank = 105
+seed = 2
+[[samples]]
+block_ranks = [17, 19, 19, 19, 19]
+n = 19
+naive_rank = 95
+rank = 93
+seed = 3
+[[samples]]
+block_ranks = [17, 20, 20, 20, 20]
+n = 20
+naive_rank = 100
+rank = 97
+seed = 3
+[[samples]]
+block_ranks = [17, 21, 21, 21, 21]
+n = 21
+naive_rank = 105
+rank = 101
+seed = 3
+[[samples]]
+block_ranks = [17, 22, 22, 22, 22]
+n = 22
+naive_rank = 105
+rank = 105
+seed = 3
+[[samples]]
+block_ranks = [17, 23, 23, 23, 23]
+n = 23
+naive_rank = 105
+rank = 105
+seed = 3
+[[samples]]
+block_ranks = [17, 24, 24, 24, 24]
+n = 24
+naive_rank = 105
+rank = 105
+seed = 3
+[[samples]]
+block_ranks = [17, 25, 25, 25, 25]
+n = 25
+naive_rank = 105
+rank = 105
+seed = 3
