@@ -11,7 +11,7 @@ jobs:
       - uses: julia-actions/cache@v2
       - run: julia --project=. -e 'using Pkg; Pkg.instantiate()'
       - run: julia --project=. test/runtests.jl
-      - run: julia --project=. scripts/run.jl quick
+      - run: julia --project=. scripts/run.jl showcase
       - uses: actions/upload-artifact@v4
         with:
           name: reproduced-results

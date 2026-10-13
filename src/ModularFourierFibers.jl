@@ -36,11 +36,8 @@ function split_field(p, start=1_000_000)
     error("no primitive 4p-th root found")
 end
 
-function sine_field(p)
-    R,x=Nemo.polynomial_ring(QQ,"x")
-    f=p==5 ? x^4-5x^2+5 : p==7 ? x^6-7x^4+14x^2-7 : error("p=5 or 7 required")
-    Nemo.number_field(f,"u")
-end
+"Characteristic-zero field containing cos(2pi/p) and sin(2pi/p)."
+sine_field(p) = Nemo.cyclotomic_real_subfield(4p,"u")
 
 function trig_tables(p; arithmetic=:float, start=1_000_000)
     if arithmetic==:float
@@ -49,18 +46,24 @@ function trig_tables(p; arithmetic=:float, start=1_000_000)
         F,z,_=split_field(p,start); w=z^4; ii=z^p
         return F,[(w^a+w^(-a))/2 for a in 0:p-1],[(w^a-w^(-a))/(2ii) for a in 0:p-1]
     elseif arithmetic==:numberfield
-        F,u=sine_field(p); t=u^4-4u^2+2; s=p==5 ? u/2 : (u^3-3u)/2
-        C=fill(zero(F),p); S=fill(zero(F),p); C[1]=one(F);C[2]=t/2;S[2]=s
-        for a in 2:p-1; C[a+1]=t*C[a]-C[a-1];S[a+1]=t*S[a]-S[a-1];end
+        # u = 2cos(pi/(2p)).  First form t=2cos(2pi/p) and
+        # s=sin(2pi/p)=cos((p-4)pi/(2p)), then use the short recurrence
+        # q[a+1]=t*q[a]-q[a-1], keeping the exact representation compact.
+        F,u=sine_field(p);q=fill(zero(F),p-2);q[1]=F(2);q[2]=u
+        for n in 2:p-3;q[n+1]=u*q[n]-q[n-1];end
+        t=u^4-4u^2+2;s=q[p-3]/2
+        C=fill(zero(F),p);S=fill(zero(F),p)
+        C[1]=one(F);C[2]=t/2;S[2]=s
+        for a in 2:p-1;C[a+1]=t*C[a]-C[a-1];S[a+1]=t*S[a]-S[a-1];end
         return F,C,S
     end
     error("unknown arithmetic")
 end
 
-"Explicit exact narrow (2p-1) or wide (4p-3) Fourier realization."
-function fourier(p; kind=:narrow, arithmetic=:float, start=1_000_000, phases=nothing)
+"Explicit Fourier realization: four or eight neurons per conjugate frequency pair, plus one constant neuron."
+function fourier(p; kind=:four_per_frequency, arithmetic=:float, start=1_000_000, phases=nothing)
     isodd(p) && p>=3 || throw(ArgumentError("odd p >= 3 required"))
-    kind in (:narrow,:wide) || throw(ArgumentError("unknown realization"))
+    kind in (:four_per_frequency,:eight_per_frequency) || throw(ArgumentError("unknown realization"))
     F,C,S=trig_tables(p;arithmetic,start); T=eltype(C)
     av=Vector{T}[];bv=Vector{T}[];vv=Vector{T}[];v0=fill(F(1)/p,p)
     for k in 1:(p-1)÷2
@@ -72,7 +75,7 @@ function fourier(p; kind=:narrow, arithmetic=:float, start=1_000_000, phases=not
             ca=cos.(ang .+ pa);sa=sin.(ang .+ pa);cb=cos.(ang .+ pb);sb=sin.(ang .+ pb)
             cv=cos.(ang .+ (pa+pb));sv=sin.(ang .+ (pa+pb))
         end
-        if kind==:narrow
+        if kind==:four_per_frequency
             for (a,b,v) in [(ca,cb,cv),(sa,-sb,cv),(sa,cb,sv),(ca,sb,sv)]
                 push!(av,a);push!(bv,b);push!(vv,v./p)
             end
@@ -139,7 +142,7 @@ function kernel_report(p; arithmetic=:finite,start=1_000_000)
         "coupled_kernel"=>Nemo.ncols(J)-r-sum(dims),"field"=>string(F))
 end
 
-function block_report(p;kind=:wide,arithmetic=:finite)
+function block_report(p;kind=:eight_per_frequency,arithmetic=:finite)
     F,A,B,V=fourier(p;kind,arithmetic);_,C,S=trig_tables(p;arithmetic)
     J=exact_matrix(F,jacobian(A,B,V,allpairs(p)))
     modes=[fill(one(F),p)]
@@ -152,12 +155,12 @@ function block_report(p;kind=:wide,arithmetic=:finite)
         "projected_block_dimensions"=>dims,"direct_sum_verified"=>r==sum(dims)),F,J,blocks
 end
 
-function subset_report(p;kind=:wide,seeds=1:3,sizes=sort(unique(vcat(collect(5:5:p^2),[p^2]))))
-    report,F,J,blocks=block_report(p;kind);rows=Dict[]
+function subset_report(p;kind=:eight_per_frequency,arithmetic=:finite,seeds=1:3,sizes=sort(unique(vcat(collect(5:5:p^2),[p^2]))))
+    report,F,J,blocks=block_report(p;kind,arithmetic);rows=Dict[]
     for seed in seeds,n in sizes
         D=observation_set(p,n;seed);rr=Nemo.rank(J[bigrows(p,D),:]);inds=[(a-1)*p+b for (a,b) in D]
         br=[Nemo.rank(U[inds,:]) for U in blocks]
-        kind==:wide && @assert rr==sum(br)
+        kind==:eight_per_frequency && @assert rr==sum(br)
         push!(rows,Dict("seed"=>seed,"n"=>n,"rank"=>rr,"naive_rank"=>min(p*n,report["full_rank"]),"block_ranks"=>br))
     end
     report["samples"]=rows;report

@@ -4,7 +4,7 @@ const MF=ModularFourierFibers
 BLAS.set_num_threads(1)
 
 @testset "Fourier roots and gauges" begin
-    for p in (5,7),kind in (:narrow,:wide)
+    for p in (5,7),kind in (:four_per_frequency,:eight_per_frequency)
         F,A,B,V=fourier(p;kind,arithmetic=:finite);D=allpairs(p)
         @test predict(A,B,V,D)==target(p,D,F)
         G=gauge_matrix(A,B,V,F);J=exact_matrix(F,jacobian(A,B,V,D))
@@ -39,6 +39,8 @@ end
     r,_,_,_=block_report(7)
     @test r["full_rank"]==271
     @test r["projected_block_dimensions"]==[25,41,41,41,41,41,41]
+    F,A,B,V=fourier(5;kind=:eight_per_frequency,arithmetic=:numberfield)
+    @test predict(A,B,V,allpairs(5))==target(5,allpairs(5),F)
     for n in (22,23)
         r=obstruction_report(n)
         @test r["training_rank"]==r["full_rank"]==105

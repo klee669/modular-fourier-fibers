@@ -1,96 +1,122 @@
-# Modular addition: Fourier fibers and certified interpolants
+# Fourier realizations and local completion in modular addition
 
-A standalone, reproducible computational study of
+This repository presents three computational results for the quadratic network
 
 ```text
-Phi(alpha,beta,v)[a,b,c] = sum_j v[c,j] * (alpha[a,j] + beta[b,j])^2
-T[a,b,c] = 1[(a+b) mod p = c].
+Phi(alpha,beta,v)[a,b,c] = sum_j v[c,j] * (alpha[a,j] + beta[b,j])^2.
 ```
 
-This repository reconstructs exploratory calculations originally performed in September 2026. The original temporary directory was lost. The reconstruction includes new execution logs, meaningful regression tests, and a portable exact-rational witness. It is **not** a byte-for-byte recovery of the old scripts or a proof of general formulas.
+The target is the modular addition table. Array indices are one-based: the target is 1 when `mod(a+b-2,p)==c-1`, and 0 otherwise. Every observed input pair includes all p output channels; residuals are uncentered.
 
-## Reproduce
+We study two explicit realizations of the same function: **eight neurons per conjugate frequency pair** (K=4p-3) and **four neurons per conjugate frequency pair** (K=2p-1). Each also has one constant neuron. These are descriptions of our constructions, not names of regimes from another paper. Their parameter-space geometries need not be the same.
 
-Install **Julia 1.12.6** (the tested version). Nemo/FLINT are installed automatically. No Python, Singular, GPU, or other local repository is needed.
+## Run the three results
 
-From this repository's root:
+Install Julia **1.12.6**, then run from the repository root:
 
 ```sh
 julia --project=. -e 'using Pkg; Pkg.instantiate()'
-julia --project=. test/runtests.jl
-julia --project=. scripts/run.jl quick
+julia --project=. scripts/run.jl
 ```
 
-`quick` runs finite-field rank/block experiments, the moderate-data comparison, all quadratic/cubic obstruction coefficients on a gauge slice, phase/splitting checks, nearby numerical sampling, and exact certification of the supplied witness. Reports are written as machine-readable TOML under `results/`. First use includes compilation time.
+The default is `showcase`. 
 
 ```sh
-# Add characteristic-zero number-field ranks at p=5,7 and larger block checks.
-julia --project=. scripts/run.jl full
-
-# Certify a supplied witness, without numerical optimization.
-julia --project=. scripts/run.jl certify
-
-# Rediscover a witness from random initializations, then certify it.
-julia --project=. scripts/run.jl search
-julia --project=. scripts/run.jl certify results/discovered_witness.txt
+julia --project=. scripts/run.jl showcase
 ```
 
-The search uses seed 1729 and one BLAS thread. Exact iterates can vary across Julia/BLAS versions. Certification of the bundled rational witness is independent of the search. Floating QR only selects a square minor: its inverse and all certification inequalities are subsequently computed exactly over Q.
-
-Other commands: `ranks`, `moderate`, `jets`, `realizations`, `nearby`. Set `MFF_RESULTS=/path/to/output` to change the output directory. GitHub Actions runs tests and `quick` on Linux; this workflow is supplied, not a claim that remote CI has already run.
-
-## What is being reproduced?
-
-| Calculation | Report / command | Evidence |
-|---|---|---|
-| Moderate-data Fourier and nongeneralizing interpolants both have full-row-rank training Jacobians | `moderate` | Exact interpolation; rank bounds certified by finite-field minors |
-| Wide Fourier tangent image splits by output frequency; naive rank saturation can fail | `ranks`, `wide_sweep_*.toml` | Exact finite-field linear algebra; finite tested cases |
-| Narrow Fourier kernel = gauge plus additional directions | `kernel_*.toml` | Exact finite-field and, in `full`, characteristic-zero number-field ranks |
-| Training/full tangent kernels agree for fixed p=5 observation sets | `jets` | Exact finite-field linear algebra |
-| Quadratic and corrected cubic obstructions vanish on a 12-dimensional gauge slice | `jets` | All 78 quadratic and 364 cubic coefficients, not random-direction tests |
-| Phase changes and neuron splitting | `realizations` | Floating phase tests; exact finite-field splitting test |
-| Nearby partial-fiber Newton samples also fit held-out outputs | `nearby` | Numerical evidence only |
-| A nongeneralizing submersive interpolant exists for the same p=5, K=9, D | `certify` | Exact-rational contraction certificate |
-
-The fixed comparison problem has p=5, K=9, and 22 observed pairs. In **one-based** array coordinates it omits `(2,4), (4,4), (5,4)` from the full 5-by-5 table. The 23-pair variant omits only `(2,4), (5,4)`.
-
-## Main reference values
-
-| Realization | p | K | Full Jacobian rank | Kernel | Translation/scaling gauge |
-|---|---:|---:|---:|---:|---:|
-| narrow | 5 | 9 | 105 | 30 | 18 |
-| narrow | 7 | 13 | 229 | 44 | 26 |
-| wide | 5 | 17 | 117 | 138 | 34 |
-| wide | 7 | 25 | 271 | 254 | 50 |
-
-For the wide realization, the projected block dimensions at p=5,7,11 are respectively `[17,25,...,25]`, `[25,41,...,41]`, and `[41,73,...,73]`. The corresponding full ranks are 117,271,771. The proposed formulas `d0=4p-3`, `d1=8p-15` are **conjectural beyond verified cases** and require handling small-p collisions. Narrow projected blocks are coupled; adding their dimensions gives the wrong full rank.
-
-For narrow p=7, the kernel decomposes into 26 gauge directions and 18 extra directions: 4 extra directions per each of three frequency blocks, plus 6 directions outside the sum of individual block kernels. This is an infinitesimal statement, not an integration theorem.
-
-The certified nongeneralizing interpolant has training rank 110 and a smooth 25-dimensional training fiber. Under the uncentered squared-residual loss and a smooth positive local prior, its local learning coefficient is 55. A value 52.5 for the Fourier point remains **conditional** on proving the relevant 30-dimensional fiber is smooth with the expected tangent space.
-
-## Scope and limitations
-
-- Every observed pair includes all p output channels. Losses here are **uncentered**. These are not automatically results for sample-centered logits or regularized objectives.
-- Fixed-p table completion is not transfer to a new modulus, a larger input size, or a new group.
-- Finite-field computations are exact in their stated characteristic. They do not by themselves prove characteristic-zero upper bounds or identities.
-- Vanishing obstructions through degree three and nearby Newton samples do not establish germ equality, smoothness, irreducibility, or RLCT at the Fourier point.
-- The existence certificate concerns one nongeneralizing solution. It does not prove that it belongs to a different irreducible component, or that generalizing points globally minimize LLC.
-- The cubic residual map can acquire higher-order terms after implicit elimination; testing degree three is not testing all orders.
-- Permutations and finite cyclic group actions do not contribute infinitesimal gauge directions.
-
-See [the mathematical conventions and certificate proof](docs/MATHEMATICS.md), [reconstruction provenance](docs/PROVENANCE.md), and [recorded reproduction results](docs/REPRODUCED.md).
-
-## Layout
+The run prints a brief summary and writes exactly three report files:
 
 ```text
-src/                 model, exact linear algebra, jets, numerical search, certificate
-scripts/run.jl       command-line experiments
-test/runtests.jl     exact Taylor/polarization and monomial-coefficient checks; certificate
-data/                portable witness (exact rational coordinates)
-docs/                definitions, certificate proof, provenance, reproduction results
-results/             generated TOML reports (ignored by git)
-Manifest.toml        pinned dependency graph
+results/eight_neurons_per_frequency.toml
+results/four_neurons_per_frequency.toml
+results/nearby_completion.toml
 ```
 
-The default runs do not modify the bundled witness. To contribute another witness, first run `search`, certify the generated text file, and record the associated environment and bounds.
+Each report groups all of that experiment's cases into one TOML file. Running again overwrites these three files. It does not delete files produced by explicitly requested additional experiments. Set `MFF_RESULTS=/path/to/output` to use another output directory.
+
+Nemo/FLINT install automatically. The exact characteristic-zero calculations can take some time; first use also includes Julia compilation.
+
+## 1. Eight neurons per frequency pair: output-frequency blocks
+
+Command for this result alone:
+
+```sh
+julia --project=. scripts/run.jl eight
+```
+
+Using `(u+v)^2-(u-v)^2=4uv`, the construction implements each Fourier product separately. It uses K=4p-3 neurons in total.
+
+At this realization, exact characteristic-zero calculations over cyclotomic number fields show that the tangent image splits into independent output-frequency blocks:
+
+| p | K | Constant output block dimension | Each nonconstant output block dimension | Full Jacobian rank |
+|---:|---:|---:|---:|---:|
+| 5 | 17 | 17 | 25 | 117 |
+| 7 | 25 | 25 | 41 | 271 |
+
+There are p-1 nonconstant real output modes. In each listed case, the sum of projected block dimensions equals the full rank. The patterns `4p-3` and `8p-15` are not yet proved for general p.
+
+The report also restricts the p=7 blocks to partial observations. For the supplied seed-1 sample sets, 30 observed pairs give training rank 205, while the naive expression `min(7*30,271)` gives 210. The observed rank is the sum of the **restricted** block ranks. Thus both the number and placement of observations matter.
+
+**Meaning:** recovering all first-order output variations requires sufficiently informative observations in every frequency block. This calculation does not establish nonlinear local completion for this construction. The listed ranks and direct-sum identities are exact in characteristic zero.
+
+## 2. Four neurons per frequency pair: kernels and partial observations
+
+Command for this result alone:
+
+```sh
+julia --project=. scripts/run.jl four
+```
+
+This construction combines Fourier products using identities such as
+
+```text
+(cos A + cos B)^2 + (sin A - sin B)^2 = 2 + 2 cos(A+B).
+```
+
+It uses K=2p-1 neurons. Its parameter directions couple output frequencies, so the independent-block result from the eight-neuron construction must not be transferred to it.
+
+Exact characteristic-zero number-field computations give:
+
+| p | K | Full rank | Kernel dimension | Translation/scaling gauge | Additional directions |
+|---:|---:|---:|---:|---:|---:|
+| 5 | 9 | 105 | 30 | 18 | 12 |
+| 7 | 13 | 229 | 44 | 26 | 18 |
+
+Each frequency pair supports four additional kernel directions beyond its eight translation/scaling directions. A further 4 directions at p=5, and 6 at p=7, lie outside the sum of the individual neuron-block kernels. These are infinitesimal statements, not a construction of continuous solution families.
+
+For p=5, the report also compares the full Jacobian with the training Jacobian on two fixed observation sets:
+
+- 22 pairs: omit `(2,4), (4,4), (5,4)` from the full table.
+- 23 pairs: omit `(2,4), (5,4)`.
+
+Both training ranks are 105, equal to the full rank. Since the full system contains every training equation, their parameter-space kernels coincide.
+
+**Meaning:** at this Fourier point, every parameter direction preserving the observed outputs to first order also preserves the full table to first order. This does not itself prove smoothness or equality of the nonlinear fiber germs.
+
+## 3. Nearby completion: numerical partial-fiber samples
+
+Command for this result alone:
+
+```sh
+julia --project=. scripts/run.jl nearby
+```
+
+This experiment uses the **four-neuron-per-frequency-pair** construction at p=5, K=9, and the same two observation sets as Result 2. It:
+
+1. Samples a unit direction in the training Jacobian kernel at the Fourier point.
+2. Moves by a distance of 1e-2, 1e-3, or 1e-4.
+3. Applies Newton correction using **only the observed-pair residuals**.
+4. Measures both training and full-table residuals at the resulting point.
+
+Two observation sets, three scales, and eight directions give 48 samples. The previous reproduction had maximum training and full residuals of about 1.95e-13. The new report records every residual and displacement rather than assuming this value will be identical on all platforms.
+
+**Meaning:** these sampled nearby training solutions also fit the held-out entries to numerical precision. Together with Result 2 this motivates a local completion conjecture. Sampling is not a proof that every nearby training solution completes the table.
+
+## Reading the results
+
+Results 1 and 2 concern **different explicit realizations**. Result 3 is performed only around the realization in Result 2. We do not infer its nonlinear behavior from the independent-block decomposition in Result 1.
+
+All three experiments concern completion at fixed p, not transfer to a new modulus or a larger group. The code was reconstructed from preserved exploratory records and rerun; the dependency graph is pinned in `Manifest.toml`.
+
+The `src/` modules contain the computations and `scripts/run.jl` selects the experiments. Other research commands remain available only when explicitly requested; none are part of the default presentation. Older records in `docs/reference/` are archival and are not the current output directory.
